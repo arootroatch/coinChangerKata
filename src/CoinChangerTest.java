@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class CoinChangerTest {
     HashMap<String, Integer>coins;
@@ -35,7 +36,7 @@ class CoinChangerTest {
     void oneNickel(){
         coins = coinChanger.makeChange(5);
         assertEquals(1, coins.get("nickels"));
-        assertEquals(null, coins.get("pennies"));
+        assertNull(coins.get("pennies"));
     }
 
     @Test
@@ -56,8 +57,8 @@ class CoinChangerTest {
     void oneDime(){
         coins = coinChanger.makeChange(10);
         assertEquals(1, coins.get("dimes"));
-        assertEquals(null, coins.get("pennies"));
-        assertEquals(null, coins.get("nickels"));
+        assertNull(coins.get("pennies"));
+        assertNull(coins.get("nickels"));
     }
 
     @Test
@@ -72,9 +73,9 @@ class CoinChangerTest {
     void oneQuarter(){
         coins = coinChanger.makeChange(25);
         assertEquals(1, coins.get("quarters"));
-        assertEquals(null, coins.get("pennies"));
-        assertEquals(null, coins.get("nickels"));
-        assertEquals(null, coins.get("dimes"));
+        assertNull(coins.get("pennies"));
+        assertNull(coins.get("nickels"));
+        assertNull(coins.get("dimes"));
     }
 
     @Test
